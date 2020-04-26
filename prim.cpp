@@ -45,7 +45,7 @@ int main(){
         min=I;
         for(i=1;i<=n;i++){
           if(near[i]!=0 && cost[i][near[i]] < min){
-              k=j;
+              k=i;
               min=cost[i][near[i]];
           }
         }
