@@ -33,8 +33,8 @@ int main(){
     t[1][0]=v;
     near[u]=near[v]=0;
 
-    for(int j=1;j<n;j++){
-        if(near!=0){
+    for(int j=1;j<=n;j++){
+        if(near[j]!=0){
             if(cost[j][u]<cost[j][v])
                 near[j]=u;
             else
@@ -45,16 +45,16 @@ int main(){
         min=I;
         for(i=1;i<n;i++){
           if(near[i]!=0 && cost[i][near[i]] < min){
-              min=k;
+              k=j;
               min=cost[i][near[i]];
           }
         }
 
-        t[0][i]=k;
-        t[1][i]=near[k];
+        t[0][j]=k;
+        t[1][j]=near[k];
         near[k]=0;
 
-        for(int i=1;i<n;i++){
+        for(int i=1;i<=n;i++){
             if(near[i]!=0 && cost[i][k] < cost[i][near[i]]){
                 near[i]=k;
             }
